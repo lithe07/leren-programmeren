@@ -1,23 +1,21 @@
-
-TOTAAL_CROISSANTJES= 17
-TOTAAL_STOKBRODEN = 2
+totaal_croissantjes= 17
+totaal_stokbroden= 2
 
 
 PRIJS_VAN_CROISSANTJE = 0.39
-prijs_van_stokbrood = 2.78
+PRIJS_VAN_STOKBRODEN = 2.78
 
 
-AANTAL_KORTINGSBONNEN = 3 
+aantal_kortingsbonnen = 3 
 KORTINGSBONNEN = 0.50
 
-
-uitkomst_croissantjes = (TOTAAL_CROISSANTJES * PRIJS_VAN_CROISSANTJE)
-uitkomst_stokbroden = (TOTAAL_STOKBRODEN * prijs_van_stokbrood)
-uitkomst_kortingsbon = (AANTAL_KORTINGSBONNEN * KORTINGSBONNEN)
+uitkomst_croissantjes = totaal_croissantjes * PRIJS_VAN_CROISSANTJE
+uitkomst_stokbroden = totaal_stokbroden * PRIJS_VAN_STOKBRODEN
+uitkomst_kortingsbon = aantal_kortingsbonnen * KORTINGSBONNEN
 
 
 totaal = (uitkomst_croissantjes + uitkomst_stokbroden) - uitkomst_kortingsbon
-print(f"De feestlunch kost je bij de bakker {totaal.__round__(1)} euro voor de {TOTAAL_CROISSANTJES} croissantjes en de {TOTAAL_STOKBRODEN} stokbroden als de {AANTAL_KORTINGSBONNEN} kortingsbonnen nog geldig zijn!  ")
+print(f"De feestlunch kost je bij de bakker {totaal.__round__(1)} euro voor de {totaal_croissantjes} croissantjes en de {totaal_stokbroden} stokbroden als de {aantal_kortingsbonnen} kortingsbonnen nog geldig zijn!  ")
 
 
 

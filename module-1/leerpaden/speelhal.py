@@ -1,13 +1,12 @@
-AANTAL_MENSEN = 4
+aantal_mensen = 4
 
 TOEGANGTICKET_PER_PERSOON = 7.45
 GAMESEAT_PER_5_MINUUT = 0.37
 TIJD_GAMESEAT_MINUTEN = 45
+PERIODE = 5
 
-
-totaal_kosten_gameseat = ((TIJD_GAMESEAT_MINUTEN / 5) * GAMESEAT_PER_5_MINUUT) * AANTAL_MENSEN 
-
-totaal_toegangtickets = AANTAL_MENSEN * TOEGANGTICKET_PER_PERSOON
+totaal_kosten_gameseat = ((TIJD_GAMESEAT_MINUTEN / PERIODE) * GAMESEAT_PER_5_MINUUT) * aantal_mensen 
+totaal_toegangtickets = aantal_mensen * TOEGANGTICKET_PER_PERSOON
 
 
 compleet_bedrag = totaal_kosten_gameseat + totaal_toegangtickets
