@@ -1,4 +1,3 @@
-
 naam = input("Voer uw naam in: ")
 adres = input("Voer uw adres in: ")
 postcode = input("Voer uw postcode in: ")
