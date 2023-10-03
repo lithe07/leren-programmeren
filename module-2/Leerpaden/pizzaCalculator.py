@@ -2,7 +2,7 @@
 # achternaam = Jnaid
 # opdarcht = Pizza calculator
 
-# Prijzen voor Pizza soorten.
+# Prijzen voor Pizza soorten
 PIZZA_PRIJZEN = {
     "groot" : 8.50,
     "medium" : 10.50,
@@ -21,8 +21,9 @@ kosten_klein = aantal_klein * PIZZA_PRIJZEN["klein"]
 totaal_prijs = kosten_groot + kosten_medium + kosten_klein
 
 # dat is de bonnetje van de bestelde pizza van de gebruiker
-print("===== UW Bestelling=====")
+print("======= UW Bestelling=======")
 print(f"{aatnal_groot} x groot pizza's: € {kosten_groot}")
 print(f"{aantal_medium} x medium pizza': € {kosten_medium}")
 print(f"{aantal_klein} x klein pizza's: € {kosten_klein}")
+print("============================")
 print(f"Totaal prijs: € {totaal_prijs}")
