@@ -10,9 +10,9 @@ PIZZA_PRIJZEN = {
 }
 
 # Hier is de invoer van de gebruiker voor pizza soorten
-aatnal_groot = int(input("Hoeveel groot pizza's wilt uw bestellen? "))
-aantal_medium = int(input("Hoeveel medium pizza's wilt uw bestellen? "))
-aantal_klein = int(input("Hoeveel klein pizza's wilt uw bestellen? "))
+aatnal_groot = float(input("Hoeveel groot pizza's wilt uw bestellen? "))
+aantal_medium = float(input("Hoeveel medium pizza's wilt uw bestellen? "))
+aantal_klein = float(input("Hoeveel klein pizza's wilt uw bestellen? "))
 
 # Berekeningen van pizza prijzen 
 kosten_groot = aatnal_groot * PIZZA_PRIJZEN["groot"]
