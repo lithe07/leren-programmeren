@@ -6,7 +6,7 @@ gasten = int(input('hoeveel gasten? '))
 drank = False
 chips = False
 
-if (gastheer == MIJN_NAAM) or ((gasten and chips and drank) or (gastheer and drank)) and gastheer != SLB_NAAM or 20 >= gasten >= 4:
+if (gastheer == MIJN_NAAM) or ((gasten and chips and drank) or (gastheer and drank)) and gastheer != SLB_NAAM or gastheer or 20 >= gasten >= 4:
     print('Start the Party')
 else:
     print('No party')
