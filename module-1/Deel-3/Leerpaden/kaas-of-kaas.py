@@ -8,12 +8,16 @@ if antwoord_1 == 'ja':
             print('Emmenthaler')
         elif belachelijk == 'nee':
             print('Leerdammer')
+        else:
+            print("ongeldige invoer ")
     elif gaten == 'nee':
         steen = input('is de kaas hard als steen? ')
         if steen == 'ja':
             print('parmigiano Reggiano')
         elif steen == 'nee':
             print('Goudse kaas ')
+        else: 
+            print("ongeldige invoer ")
 elif antwoord_1 == 'nee':
     schimmel = input('heeft de kaas blauwe schimmel? ')
     if schimmel == "ja":
