@@ -79,27 +79,3 @@ elif scoor <= TWIJFELACHTIG:
 else:
     print(COMPETENTIE_ADVIES_GERUSTSTELLEND)
 
-
-# ... (je bestaande code blijft hier)
-
-# Tellen van het aantal antwoorden 'altijd', 'vaak' en 'regelmatig'
-aantal_altijd = sum(answer <= VAAK for answer in [competentie_stelling_1, competentie_stelling_2, competentie_stelling_3, competentie_stelling_4, competentie_stelling_5, competentie_stelling_6, competentie_stelling_7])
-aantal_vaak = sum(answer == VAAK for answer in [competentie_stelling_1, competentie_stelling_2, competentie_stelling_3, competentie_stelling_4, competentie_stelling_5, competentie_stelling_6, competentie_stelling_7])
-aantal_regelmatig = sum(answer == REGELMATIG for answer in [competentie_stelling_1, competentie_stelling_2, competentie_stelling_3, competentie_stelling_4, competentie_stelling_5, competentie_stelling_6, competentie_stelling_7])
-
-# Berekenen van de gemiddelde score
-gemiddelde_score = (
-    competentie_stelling_1 + competentie_stelling_2 + competentie_stelling_3 +
-    competentie_stelling_4 + competentie_stelling_5 + competentie_stelling_6 + competentie_stelling_7
-) / GEMIDDELD
-
-# Verbeterd advies gebaseerd op de gegeven criteria
-if gemiddelde_score <= 2 or aantal_altijd + aantal_vaak > 3.5:
-    advies = COMPETENTIE_ADVIES_ZORGELIJK
-elif gemiddelde_score <= 3 or aantal_altijd + aantal_vaak + aantal_regelmatig > 3.5:
-    advies = COMPETENTIE_ADVIES_TWIJFELACHTIG
-else:
-    advies = COMPETENTIE_ADVIES_GERUSTSTELLEND
-
-# Tonen van het verbeterde advies
-print(f'\nVerbeterd Advies: {advies}\n')
