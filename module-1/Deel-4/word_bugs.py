@@ -1,12 +1,9 @@
 a = input('Geef een woord: ')
 b = input('Geef nog een woord: ')
 
-if a.isalpha() and b.isalpha():
-    if len(a) > len(b):
-        print('Woord a heeft meer letters dan woord b')
-    elif len(a) < len(b):
-        print('Woord a heeft minder letters dan woord b')
-    else:
-        print('Woord a en woord b hebben evenveel letters')
+if len(a) > len(b):
+    print('Woord a heeft meer letters dan woord b')
+elif len(a) < len(b):
+    print('Woord a heeft minder letters dan woord b')
 else:
-    print('Voer geldige woorden in (alleen letters toegestaan).')
+    print('Woord a en woord b hebben evenveel letters')
