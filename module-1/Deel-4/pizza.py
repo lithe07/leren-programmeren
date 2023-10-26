@@ -4,7 +4,6 @@
 
 def vraag_aantal(pizza_soort):
     while True:
-        print("uitgevoerd")
         try:
             aantal = float(input(f"Hoeveel {pizza_soort} pizza's wilt u bestellen? "))
             if aantal < 0:
