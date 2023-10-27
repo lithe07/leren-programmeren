@@ -16,13 +16,11 @@ def calculate_ego_score(sub_sentences):
                 ego_score += 1
     return ego_score
 
-# Voorbeeldtekst om de functies te testen
 sample_text = "Ik hou van pizza. Omdat pizza heerlijk is, eet ik het vaak. Maar soms wil ik gezonder eten, zodat ik me beter voel."
 
 sub_sentences = extract_sub_sentences(sample_text)
 ego_score = calculate_ego_score(sub_sentences)
 
-# Druk de resultaten af
 print("Deelzinnen in de tekst:")
 for sentence in sub_sentences:
     print(sentence)
