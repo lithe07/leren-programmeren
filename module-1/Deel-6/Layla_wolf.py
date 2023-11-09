@@ -39,9 +39,3 @@ def einde_verhaal():
     elif choice == '2':
         print("Helaas toch heeft de wolf Layla kunnen pakken en eten ")
 
-def main():
-    intro()
-    twee_routes()
-
-if __name__ == "__main__":
-    main()
