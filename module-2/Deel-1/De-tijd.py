@@ -1,8 +1,10 @@
-for hour in range(24):
-    suffix = "AM" if hour < 12 else "PM"
-    display_hour = hour if hour <= 12 else hour - 12
-    display_hour = 12 if display_hour == 0 else display_hour
+for uur in range(1, 25):
+    if uur <= 12:
+        print(f'{uur} AM')
+    else:
+        uur = uur - 12
+        print(f'{uur} PM')
 
-    print(f"{display_hour:02d}:00 {suffix}")
+
 
 
