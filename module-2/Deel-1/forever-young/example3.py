@@ -8,5 +8,5 @@ for i in range(4):
     robotArm.drop()
     robotArm.moveLeft()
 
-robotArm.moveRight()
+
 robotArm.wait()
