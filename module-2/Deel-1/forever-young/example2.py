@@ -2,7 +2,6 @@ from RobotArm import RobotArm
 
 robotArm = RobotArm('exercise 2')
 
-# for i in range(1):
 robotArm.grab()
 for i in range(9):
     robotArm.moveRight()
