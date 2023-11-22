@@ -1,31 +1,10 @@
-# aantal_lijstjes = int(input("Voer het aantal lijstjes in: "))
-
-# lijstjes = []
-
-# for i in range(1, aantal_lijstjes + 1):
-#     lengte_lijstje = int(input(f"Voer de lengte in voor lijst {i}: "))
-#     lijst = []  
-
-#     for j in range(lengte_lijstje):
-#         element = j + i  
-#         lijst.append(element)
-
-#     lijstjes.append(lijst)
-
-# for i, lijst in enumerate(lijstjes, start=1):
-#     print(f"Lijst {i}: {lijst}")
-
-
-
-
-
-# Vraag het aantal lijstjes
-aantal_lijstjes = int(input("Voer het aantal lijstjes in: "))
-
-# Loop door het aantal lijstjes en vraag de lengte van elk lijstje
-for i in range(1, aantal_lijstjes + 1):
-    lengte_lijstje = int(input(f"Voer de lengte in voor lijst {i}: "))
-
-    # Genereer en toon het lijstje met de gekozen lengte en stappen
-    lijstje = list(range(1, lengte_lijstje * i + 1, i))
-    print(f"Lijst {i}: {lijstje}")
+aantal_lijsten = int(input("Voer het aantal lijstjes in: "))
+lege_lijst =[]
+start = 1
+for lijst in range(1, aantal_lijsten + 1):
+    lengte_lijst = int(input(f"Voer de lengte in voor lijst {lijst}: "))
+    lijstje = list(range(start, start + lengte_lijst,1))
+    start += 1
+    lege_lijst.append(lijstje)
+    print(f"Lijst {lijst}: {lijstje}")
+print(lege_lijst)

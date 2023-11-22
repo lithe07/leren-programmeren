@@ -14,10 +14,6 @@ for kaart in kaarten:
 deck.extend(jokers)
 random.shuffle(deck)
 
-
-for i, kaart in enumerate(deck[:7]):
-    print(f'Kaart {i+1}: {kaart}')
-
-print(f'Rest van de kaarten in het kaartspel ({len(deck)-7} overgebleven):')
-print(deck[7:])
- 
+for _ in range(7):
+    print(deck.pop(0))
+print(len(deck))
