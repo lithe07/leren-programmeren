@@ -4,11 +4,11 @@ antwoord = 50
 iteratie = 1
 
 while antwoord < 1000:
-    getal = a + 1
-    uitkomst = f"{b} + {a}"
+    a = a + 1
+    b = f"{b} + {a}"
     antwoord = antwoord + a
     print(f"{b} = {antwoord}")
-iteratie = 1
+    iteratie =+ 1
 
 
 
