@@ -15,6 +15,5 @@ for  aantalblokjes in range(1, 5): #stapel`
 robotArm.wait()
 
 
-#  bij opdracht 13 robotarm moet de kleur scannen of er geen kleur is dat betekent geen grab
 
 
