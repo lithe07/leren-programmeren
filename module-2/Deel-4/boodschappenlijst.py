@@ -1,7 +1,7 @@
 boodschappenlijst = {}
 
 while True:
-    item = input("Voer het item in (of 'stop' om te eindigen): ").lower()
+    item = input("Voer het item in (of 'stop' om te eindigen): ").lower().strip()
 
     if item == 'stop':
         break
