@@ -1,33 +1,29 @@
 import random
-
-def raden_spel():
-    geheime_getal = random.randint(1, 1000)
-    score = 0
-    max_ronden = 20
-
-    for ronde in range(1, max_ronden + 1):
-        geraden_getal = int(input(f"Ronde {ronde}: Raad een getal tussen 1 en 1000: "))
-
-        verschil = abs(geraden_getal - geheime_getal)
-
-        if geraden_getal == geheime_getal:
-            print("Gefeliciteerd, je hebt het juiste getal geraden!")
-            score += 1
-        else:
-            if verschil < 20:
-                print("Je bent heel warm")
-            elif verschil < 50:
-                print("Je bent warm")
-            else:
-                print("Hoger" if geraden_getal < geheime_getal else "Lager")
-                print(f"Het juiste getal was: {geheime_getal}")
-
-        print(f"Huidige score: {score}")
-
-        if ronde == max_ronden or input("Nog een getal raden? (ja/nee): ").lower() != 'ja':
+rondes = 20
+scoor = 0
+geheime_getal = random.randint(1, 1000)
+for ronde in range(1, 21):
+    gok = int(input('gok een getal tussen 1 en 1000'))
+    verschil = abs(geheime_getal - gok)
+    if gok == geheime_getal:
+        rondes -= 1
+        scoor += 1
+        print(f'goed gedaan je hebt nog {rondes} rondes over en je scoor is {scoor}')
+        opnieuw = input('wil je stoppen')
+        if opnieuw == 'ja':
             break
-
-    print(f"Eindscore: {score}")
-
-if __name__ == "__main__":
-    raden_spel()
+    elif verschil < 20:
+        print('je bemn heel warm')
+    elif verschil < 50:
+        print('je bent warm')
+    elif gok < geheime_getal:
+        print('hoger')
+    else:
+        print('lager')
+    if ronde == 10 and scoor == scoor:
+        print('je hebt verloren ')
+        break
+    elif rondes == 0:
+        print('je bent legend je hebt alles geraden')
+        print(f'je scoor {scoor}')
+        break
