@@ -40,5 +40,5 @@ def raden_spel():
 
     print(f"Eindscore: {score}")
 
-if __name__ == "__main__":
-    raden_spel()
+
+raden_spel()
