@@ -1,3 +1,6 @@
-import fruitmand
+from fruitmand import fruitmand
 
-print(fruitmand)
+
+
+for x in fruitmand:
+    print(x)
