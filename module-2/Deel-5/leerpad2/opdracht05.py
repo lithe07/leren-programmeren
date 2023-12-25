@@ -1,4 +1,4 @@
-from fruitmand02 import fruitmand 
+from fruitmand02 import fruitmand
 
 fruitmand.reverse()
 for fruit in fruitmand:
