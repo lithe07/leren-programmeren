@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" modified="2023-12-26T19:53:23.870Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="8EnAzyN7cbemc6pb21W7" version="22.1.11" type="device">
+  <diagram name="Pagina-1" id="80_aTMoOErlhEXatL1sE">
+    <mxGraphModel dx="1206" dy="1911" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="C7486Ham7OAG_oIRPcx7-2" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="-1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-1" value="Start Programma" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="341" y="-1130" width="146" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-4" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="-970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-3" value="Wat is je naam?" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="346" y="-1000" width="136" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-10" value="True" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-8" target="C7486Ham7OAG_oIRPcx7-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-11" value="False" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-8" target="C7486Ham7OAG_oIRPcx7-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="-840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-8" value="Unieke namen?" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="560" y="-1010" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-14" value="True" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="-630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-15" value="False" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="-750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-9" value="Aantal namen =&amp;gt; 3" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="560" y="-810" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-13" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-12" target="C7486Ham7OAG_oIRPcx7-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-12" value="Graag een Unieke naam invoeren." style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="354" y="-860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-22" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;shadow=0;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-17" target="C7486Ham7OAG_oIRPcx7-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="-950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-17" value="Er moet 3 namen zijn totdat het spel begint&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="140" y="-780" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-25" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="-600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-24" value="Trek een random lootje" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="540" y="-630" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-27" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="272" y="-390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-26" value="Dat zijn de namen {namen} en de lootjes {lootje}" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="190" y="-630" width="164" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-30" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="C7486Ham7OAG_oIRPcx7-28" target="C7486Ham7OAG_oIRPcx7-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-28" value="Zit het lootje weer terug&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="212" y="-390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="C7486Ham7OAG_oIRPcx7-29" value="Einde programma" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="520" y="-390" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
