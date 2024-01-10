@@ -4,12 +4,18 @@ fruitmand = [{
     'color' : 'yellow',
     'round' : False
 },{
+    'name' : 'passivrucht',
+    'weight' : 125,
+    'color' : 'brown',
+    'round' : True
+
+},{
     'name' : 'appel',
     'weight' : 195,
     'color' : 'green',
     'round' : True
 },{
-    'name' : 'sinaasappel',
+    'name' : 'sinaasappels',
     'weight' : 130,
     'color' : 'orange',
     'round' : True

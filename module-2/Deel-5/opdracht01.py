@@ -1,6 +1,4 @@
 from fruitmand import fruitmand
 
 
-
-for x in fruitmand:
-    print(x)
+print (len(fruitmand))

@@ -1,3 +1,6 @@
 from fruitmand02 import fruitmand
 
-print(fruitmand[1]['weight'])
+for fruit in fruitmand:
+    if fruit["name"] == 'apple':
+        print(fruit["weight"])
+

@@ -1,5 +1,8 @@
 from fruitmand import fruitmand
 
+def fruit_lengte(fruit):
+    return len(fruit["name"])
+
 kleuren_vertaling = {
     'yellow': 'geel',
     'green': 'groen',
@@ -8,7 +11,8 @@ kleuren_vertaling = {
     'brown': 'bruin'
 }
 
-fruit_met_langste_naam = max(fruitmand, key=lambda fruit: len(fruit['name']))
+fruit_met_langste_naam = max(fruitmand, key=fruit_lengte)
+
 
 vertaalde_kleur = kleuren_vertaling[fruit_met_langste_naam['color']]
 

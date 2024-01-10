@@ -1,20 +1,32 @@
-import random
+from random import shuffle
 
-namen = set()
-while len(namen) < 3:
-    naam = input("Voer een unieke naam in: ")
-    if naam not in namen:
-        namen.add(naam)
-    else:
-        print("Deze naam is al ingevoerd. Probeer een andere naam.")
+namen_lijst = []
 
-namen = list(namen)
+print("Start de programma")
 
 while True:
-    geschudde_namen = namen[:]
-    random.shuffle(geschudde_namen)
-    if all(geschudde_namen[i] != namen[i] for i in range(len(namen))):
-        break
+    naam = input("Schrijf je naam in: ")
 
-for i in range(len(namen)):
-    print(f"{namen[i]} heeft het lootje van: {geschudde_namen[i]}")
+    if naam.isalpha():
+        if naam not in namen_lijst:
+            namen_lijst.append(naam)
+
+            if len(namen_lijst) >= 3:
+                vraag_aantal = input("Wil je nog een naam toevoegen? Antwoord met ja/nee: ")
+                if vraag_aantal.lower() == 'ja':
+                    continue
+                else:
+                    break
+        else:
+            print('Je hebt deze naam al toegevoegd')
+    else:
+        print('Voer een geldige naam in (alleen letters toegestaan).')
+
+shuffle(namen_lijst)
+for i in range(len(namen_lijst)):
+    gever = namen_lijst[i]
+    ontvanger = namen_lijst[(i + 1) % len(namen_lijst)]
+    print(f'{gever} trekt lootje voor {ontvanger}')
+
+        
+
