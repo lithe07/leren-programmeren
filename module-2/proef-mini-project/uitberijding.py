@@ -23,12 +23,22 @@ while True:
         print('Voer een geldige naam in (alleen letters toegestaan).')
 
 shuffle(namen_lijst)
+
+lootjes_dict = {}
+
 for i in range(len(namen_lijst)):
     gever = namen_lijst[i]
     ontvanger = namen_lijst[(i + 1) % len(namen_lijst)]
-    print(f'{gever} trekt lootje voor {ontvanger}')
-    
+    lootjes_dict[gever] = ontvanger
+
 print("Einde programma")
 
-
-
+# Om de lootjes geheim te houden
+while True:
+    vraag_naam = input("Voer een naam in om het bijbehorende lootje te zien (typ 'stop' om te stoppen): ")
+    if vraag_naam.lower() == 'stop':
+        break
+    elif vraag_naam in lootjes_dict:
+        print(f'{vraag_naam} trekt lootje voor {lootjes_dict[vraag_naam]}')
+    else:
+        print('Ongeldige naam, probeer opnieuw.')
