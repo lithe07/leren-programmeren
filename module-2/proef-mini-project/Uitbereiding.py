@@ -1,4 +1,6 @@
 from random import shuffle
+import os
+import time
 
 namen_lijst = []
 
@@ -31,14 +33,20 @@ for i in range(len(namen_lijst)):
     ontvanger = namen_lijst[(i + 1) % len(namen_lijst)]
     lootjes_dict[gever] = ontvanger
 
-print("Einde programma")
+print("Nu zijn de lootjes geheim getrokken.")
 
-# Om de lootjes geheim te houden
 while True:
     vraag_naam = input("Voer een naam in om het bijbehorende lootje te zien (typ 'stop' om te stoppen): ")
     if vraag_naam.lower() == 'stop':
         break
     elif vraag_naam in lootjes_dict:
         print(f'{vraag_naam} trekt lootje voor {lootjes_dict[vraag_naam]}')
+        time.sleep(2)
+        os.system('cls' if os.name == 'nt' else 'clear')
     else:
         print('Ongeldige naam, probeer opnieuw.')
+
+print("Einde programma")
+
+
+
