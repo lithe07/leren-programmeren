@@ -7,5 +7,15 @@ def naam_en_leeftijd():
     } 
     return gegevens
 
-resultaat = naam_en_leeftijd()
-print(f"{resultaat['naam']} is {resultaat['leeftijd']} jaar")
+def gegevens_verzamelen():
+    verzamel = []
+    while True:
+        stop_of_door = input("Wil je stoppen (j/n)? ")
+        if stop_of_door == "j":
+            break
+        verzamel.append(naam_en_leeftijd())
+    return  verzamel
+
+data = gegevens_verzamelen()
+for i in range(len(data)):
+    print(f"{data[i]['naam']} is {data[i]['leeftijd']} jaar")
