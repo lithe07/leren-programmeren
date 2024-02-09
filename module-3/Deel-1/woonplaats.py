@@ -1,4 +1,4 @@
-def naam_en_leeftijd():
+def vraag_naam_leeftijd():
     naam = input("Wat is je naam? ")
     leeftijd = int(input("Wat is je leeftijd? "))
     woonplaats = input("Waar woon je? ")
@@ -15,7 +15,7 @@ def gegevens_verzamelen():
         stop_of_door = input("Wil je stoppen (j/n)? ")
         if stop_of_door == "j":
             break
-        verzamel.append(naam_en_leeftijd())
+        verzamel.append(vraag_naam_leeftijd())
     return  verzamel
 
 data = gegevens_verzamelen()

@@ -1,4 +1,4 @@
-def naam_en_leeftijd():
+def vraag_naam_leeftijd():
     naam = input("Wat is je naam? ")
     leeftijd = int(input("Wat is je leeftijd? "))
     gegevens = {
@@ -7,5 +7,5 @@ def naam_en_leeftijd():
     } 
     return gegevens
 
-resultaat = naam_en_leeftijd()
+resultaat = vraag_naam_leeftijd()
 print(f"{resultaat['naam']} is {resultaat['leeftijd']} jaar")

@@ -11,3 +11,6 @@ def Standaardafwijking_berekenen(getallen):
 getallenlijst = [16, 2, 5, 8, 12, 3, 9, 16, 5, 8, 64, 33]
 berekening, variantie =  Standaardafwijking_berekenen(getallenlijst)
 print("De standaard afwijkingen van de getallen zijn:", berekening)
+
+
+# de naam van functie moet beginnen met een werkwoord en de uitkomst

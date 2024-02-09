@@ -1,4 +1,4 @@
-from functie_nlw import naam_en_leeftijd, gegevens_verzamelen
+from functie_nlw import vraag_naam_leeftijd, gegevens_verzamelen
 
 
 data = gegevens_verzamelen()
