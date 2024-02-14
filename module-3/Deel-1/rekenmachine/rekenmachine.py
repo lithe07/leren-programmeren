@@ -1,59 +1,48 @@
 from functions import *
+import time
+
 nummer1 = True
 nummer2 = False
 
-print("Welkom In onze Rekenmachine")
-vraag = stel_vraag('A) getallen optellen\n'
-                   'B) getallen aftrekken\n'
-                   'C) getallen vermenigvuldigen\n'
-                   'D) getallen delen\n'
-                   'E) getallen ophogen\n'
-                   'F) getallen verlagen\n'
-                   'G) getallen verdubblen\n'
-                   'H) getallen halveren\n').lower()
-if vraag in ['e', 'f', 'g', 'h']:
-    nummer1 = float(int(stel_vraag('welke getal')))
-else:
-    nummer1 = float(int(stel_vraag('welke getal')))
-    nummer2 = float(int(stel_vraag(f'welke getal met {nummer1}')))
-choice = actie_kiezen(vraag, nummer1, nummer2)
-print(choice)
+print("Welkom in de Rekenmachine")
+time.sleep(1)
 
-keuze = ('A) getallen optellen\n'
-'B) getallen aftrekken\n'
-'C) getallen vermenigvuldigen\n'
-'D) getallen delen\n'
-'E) getallen ophogen\n'
-'F) getallen verlagen\n'
-'G) getallen verdubblen\n'
-'H) getallen halveren\n')
 
-eeste_keer = True
+diensten = """A) getallen optellen
+B) getallen aftrekken 
+C) getallen vermenigvuldigen
+D) getallen delen
+E) getallen ophogen
+F) getallen verlagen
+G) getallen verdubbelen
+H) getallen halveren
+"""
+
+
+first_round = True
 while True:
-    vraag = stel_vraag(keuze)
+    vraag = stel_vraag(diensten).lower()
+    if first_round:
+        diensten += 'I) niks '
+        nummer1 = float(stel_vraag("Welke getal? "))
+        
     if vraag == 'i':
-        print('eind het programma')
+        print("Einde  van het programma.")
         break
-    elif vraag in ['e', 'f', 'g', 'h']:
-        if  eeste_keer:
-            nummer1 = float(int(stel_vraag('welke getal')))
-        else:
-            nummer1 = choice
+
+    elif vraag in ['e', 'f', 'g',  'h']:
+        nummer2 = 0
+
     else:
-        nummer2 = float(int(stel_vraag(f'welke getal met {choice}')))
-    choice = actie_kiezen(vraag, choice, nummer2)
-    print(choice)
-    eeste_keer = False
-    keuze += 'I) Stop'
+        nummer2 = float(int(stel_vraag(f"Welke getal wil je {vraag} met {nummer1}? ")))
 
+    resultaat = actie_kiezen(vraag, nummer1, nummer2)
+    print(resultaat)
+    nummer1 = resultaat
+    first_round = False
+    
 
-
-
-
-
-
-
-
+        
 
 
 
