@@ -1,37 +1,34 @@
-def addition(num1, num2):
-    return num1 + num2
+def optellen(n1, n2):
+    return n1 + n2
 
-def subtraction(num1, num2):
-    return num1 - num2
+def aftrekken(n1, n2):
+    return n1 - n2
 
-def multiplication(num1, num2):
-    return num1 * num2
+def vermenigvuldigen(n1, n2):
+    return n1 * n2
 
-def division(num1, num2):
-    return  num1 / num2
+def delen(n1, n2):
+    return n1 / n2
 
+def stel_vraag(prompt):
+    return input(prompt)
 
-def taak_uitvoeren(keuze, num1, num2):
-    if keuze == "A":       
-        return addition(num1, num2)
-    elif keuze == "B":
-        return  subtraction(num1, num2)
-    elif keuze == "C":
-        return multiplication(num1, num2)
-    elif keuze == "D":
-        return division(num1, num2)
-    elif keuze == "E":
-        return addition(num1, 1)
-    elif keuze ==  "F":
-        return subtraction(num1, 1)
-    elif keuze == "G":
-        return multiplication(num1, 2)
-    elif keuze == "H":
-        return division(num1, 2)
-    
-
-    
-
-     
-
-
+def actie_kiezen(choice, n1, n2):
+    if choice == 'a':
+        return optellen(n1, n2)
+    elif choice == 'b':
+        return aftrekken(n1, n2)
+    elif choice == 'c':
+        return vermenigvuldigen(n1, n2)
+    elif choice == 'd':
+        return delen(n1, n2)
+    elif choice == 'e':
+        return optellen(n1, 1)
+    elif choice == 'f':
+        return aftrekken(n1, 1)
+    elif choice == 'g':
+        return vermenigvuldigen(n1, 2)
+    elif choice == 'h':
+        return delen(n1, 2)
+    return choice, n1, n2
+ 

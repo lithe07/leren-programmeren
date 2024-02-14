@@ -1,34 +1,26 @@
-# Deze functie kijkt of het getal even of oneven is en antwoord met true en false:
-def even_oneven(getal:int) -> bool:
+def is_even(getal: int) -> bool:
     return getal % 2 == 0
 
-# Deze functie reverse het zin 
-def reverse_zin(zin:str) -> str:
-    betoverde_druif = zin.split()
-    doldwaze_broccoli = betoverde_druif[::-1]
-    tijdmachine_pannenkoekenmix = ' '.join(doldwaze_broccoli)
-    return tijdmachine_pannenkoekenmix
+def omgekeerde_zin(zin: str) -> str:
+    woorden = zin.split()
+    omgekeerde_woorden = woorden[::-1]
+    omgekeerde_zin = ' '.join(omgekeerde_woorden)
+    return omgekeerde_zin
 
-# Deze functie kijkt telt letters van de zin die (NIET HERHAALD ZIJN)
-def herhaald_optellen(tekst:str) -> int:
-    planetair_taartje = set(tekst)
-    whatchamacallit = len(planetair_taartje)
-    return whatchamacallit
+def tel_unieke_karakters(tekst: str) -> int:
+    unieke_karakters = set(tekst)
+    aantal_unieke_karakters = len(unieke_karakters)
+    return aantal_unieke_karakters
 
-# Deze functie telt de zin of de letters en returnt antwoord met komma getal
-def optellen_met_komma(zin:str) -> float:
-    wobbelwobbel = zin.split()
-    
-    blork = 0
-    for snorkelwagen in wobbelwobbel:
-        blork += len(snorkelwagen)
+def gemiddelde_woordlengte(zin: str) -> float:
+    woorden = zin.split()
+    totale_woordlengte = 0
+    for woord in woorden:
+        totale_woordlengte += len(woord)
+    gemiddelde_woordlengte = totale_woordlengte / len(woorden)
+    return gemiddelde_woordlengte
 
-    bizarro_matrix = blork / len(wobbelwobbel)
-    return bizarro_matrix
-
-
-# Deze funcite keert het getal van 1 t/m nummer 10:
-def getal_keren(getal:int, parallelle_tosti:int=10) -> None:
-    for zwabber_krakeling in range(1, parallelle_tosti+1):
-        laser_sandwich = zwabber_krakeling * getal
-        print(f'{zwabber_krakeling} x {getal} = {laser_sandwich}')
+def print_veelvouden(getal: int, aantal_keer: int = 10) -> None:
+    for keer in range(1, aantal_keer + 1):
+        resultaat = keer * getal
+        print(f'{keer} x {getal} = {resultaat}')
