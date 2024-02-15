@@ -1,6 +1,7 @@
 import time
 from termcolor import colored
 from data import JOURNEY_IN_DAYS, COST_FOOD_HORSE_COPPER_PER_DAY, COST_FOOD_HUMAN_COPPER_PER_DAY, COST_HORSE_SILVER_PER_DAY, COST_TENT_GOLD_PER_WEEK
+from math import ceil
 
 ##################### O03 #####################
 
@@ -23,16 +24,12 @@ def platinum2gold(amount:int) -> float:
 def getPersonCashInGold(personCash:dict) -> float:
     total_gold = 0
    
-    # Converteer koper naar goud en voeg toe aan totaal
     total_gold += copper2gold(personCash.get('copper', 0))
    
-    # Converteer zilver naar goud en voeg toe aan totaal
     total_gold += silver2gold(personCash.get('silver', 0))
-   
-    # Voeg de waarde van goud direct toe aan het totaal
+
     total_gold += personCash.get('gold', 0)
-   
-    # Converteer platina naar goud en voeg toe aan totaal
+
     total_gold += platinum2gold(personCash.get('platinum', 0))
    
     return total_gold                                                                                                                                                                                                          
@@ -76,18 +73,22 @@ def getAdventuringFriends(friends: list) -> list:
             adventuring_friends.append(friend)
     return adventuring_friends
 
-
-
 ##################### O07 #####################
 
-def getNumberOfHorsesNeeded(people:int) -> int:
-    pass
+def getNumberOfHorsesNeeded(people: int) -> int:
+    return ceil(people / 2)
 
-def getNumberOfTentsNeeded(people:int) -> int:
-    pass
+def getNumberOfTentsNeeded(people: int) -> int:
+    return ceil(people / 3)
 
-def getTotalRentalCost(horses:int, tents:int) -> float:
-    pass
+def getTotalRentalCost(horses: int, tents: int) -> float:
+    total_cost_horse = (horses * COST_HORSE_SILVER_PER_DAY / 5) * JOURNEY_IN_DAYS 
+    
+   
+    total_cost_tent = (tents * COST_TENT_GOLD_PER_WEEK ) * ceil(JOURNEY_IN_DAYS/7) 
+
+    total_cost = total_cost_horse + total_cost_tent
+    return total_cost
 
 ##################### O08 #####################
 
