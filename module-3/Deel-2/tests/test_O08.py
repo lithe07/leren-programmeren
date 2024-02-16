@@ -73,7 +73,7 @@ test('getItemsValueInGold - test 3',expected, result)
 
 testarg_items_test4 = [{
     'name' : 'Voetbal',
-    'amount' : 1,
+    'amount' : 1,   
     'unit' : ' ronde',
     'price' : {
         'amount' : 2,
