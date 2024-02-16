@@ -103,14 +103,19 @@ def getItemsValueInGold(items: list) -> float:
     total_value = 0
     for item in items:
         price_amount = item['price']['amount']
+        item_amount = item['amount']
         price_type = item['price']['type']
-        if price_type == 'gold':
-            total_value += price_amount * item['amount']
+
+        if price_type == 'copper':
+            total_value += copper2gold(price_amount) *  item_amount
         elif price_type == 'silver':
-            total_value += price_amount * item['amount'] * 0.01
-        elif price_type == 'copper':
-            total_value += price_amount * item['amount'] * 0.0001
+            total_value += silver2gold(price_amount) * item_amount
+        elif price_type == 'platinum':
+            total_value += platinum2gold(price_amount) * float(item_amount) 
+        else:
+            total_value += price_amount * item_amount
     return total_value
+
 
 ##################### O09 #####################
 
