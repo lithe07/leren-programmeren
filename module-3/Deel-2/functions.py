@@ -120,7 +120,11 @@ def getItemsValueInGold(items: list) -> float:
 ##################### O09 #####################
 
 def getCashInGoldFromPeople(people:list) -> float:
-    pass
+    total_gold = 0
+    for  person in people:
+        preson_cash = person.get('cash', {})
+        total_gold += getPersonCashInGold(preson_cash)
+    return round(total_gold, 2)
 
 ##################### O10 #####################
 
