@@ -134,7 +134,7 @@ def getInterestingInvestors(investors:list) -> list:
 def getAdventuringInvestors(investors:list) -> list:
     pass
 
-def getTotalInvestorsCosts(investors:list, gear:list) -> float:
+def getTotalInvestorsCosts(investors: list, gear: list) -> float:
     pass
 
 ##################### O11 #####################
