@@ -13,9 +13,11 @@ def silver2gold(amount:int) -> float:
     gold_amount = amount * 0.2
     return  gold_amount
 
-def copper2gold(amount:int) -> float:
-    copper_naar_gold = amount * 0.02
-    return  copper_naar_gold 
+
+
+def copper2gold(amount: int) -> float:
+    return round(silver2gold( copper2silver(amount)),2)
+
 
 def platinum2gold(amount:int) -> float:
     platinum_naar_gold = amount * 25
@@ -38,7 +40,7 @@ def getPersonCashInGold(personCash:dict) -> float:
 def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
     total_cost_copper = (people * COST_FOOD_HUMAN_COPPER_PER_DAY + horses * COST_FOOD_HORSE_COPPER_PER_DAY) * JOURNEY_IN_DAYS
 
-    total_cost_gold = total_cost_copper / 50
+    total_cost_gold = copper2gold(total_cost_copper)
     return total_cost_gold
 
 ##################### O06 #####################
@@ -82,23 +84,24 @@ def getNumberOfTentsNeeded(people: int) -> int:
     return ceil(people / 3)
 
 def getTotalRentalCost(horses: int, tents: int) -> float:
-    total_cost_horse = (horses * COST_HORSE_SILVER_PER_DAY / 5) * JOURNEY_IN_DAYS 
-    
-   
+    total_cost_horse_silver = (horses * COST_HORSE_SILVER_PER_DAY) * JOURNEY_IN_DAYS 
+
     total_cost_tent = (tents * COST_TENT_GOLD_PER_WEEK ) * ceil(JOURNEY_IN_DAYS/7) 
 
-    total_cost = total_cost_horse + total_cost_tent
+    total_cost = silver2gold(total_cost_horse_silver) + total_cost_tent
     return total_cost
 
 ##################### O08 #####################
 
-def getItemsAsText(items: list) -> str:
-    item_texts = [f"{item['amount']}{item['unit']} {item['name']}" for item in items]
-    if len(item_texts) > 1:
-        return ', '.join(item_texts[:-1]) + ' & ' + item_texts[-1]
+def getItemsAsText(items:list) -> str:
+    items_in_text = []
+    for item in items:
+        items_in_text.append(f"{item['amount']}{item['unit']} {item['name']}")
+    if len(items_in_text) > 1:
+        return', '.join(items_in_text[:-1]) +' & '+ items_in_text[-1]
     else:
-        return item_texts[0]
-        
+        return items_in_text[0]
+
 def getItemsValueInGold(items: list) -> float:
     total_value = 0
     for item in items:
@@ -144,23 +147,13 @@ def getAdventuringInvestors(investors:list) -> list:
     return adventurous_investors
 
 def getTotalInvestorsCosts(investors: list, gear: list) -> float:
-    total_cost = 0
-
-    for investor in investors:
-        if investor['adventuring']:
-            # Bereken de kosten van de tent
-            total_cost += COST_TENT_GOLD_PER_WEEK / 7 * JOURNEY_IN_DAYS
-            # Bereken de kosten van het eten
-            total_cost += getJourneyFoodCostsInGold(1, 1) * JOURNEY_IN_DAYS
-            # Bereken de kosten van het paard
-            total_cost += COST_HORSE_SILVER_PER_DAY * JOURNEY_IN_DAYS
-            # Bereken de totale waarde van de cash van de investeerder
-            total_cost += getPersonCashInGold(investor.get('cash', {})) * investor['profitReturn'] / sum(investor['profitReturn'] for investor in investors)
-
-    # Voeg de kosten van de uitrusting toe
-    total_cost += getItemsValueInGold(gear)
-
-    return round(total_cost, 2)
+    aantal_investors = len(getAdventuringInvestors(investors))
+ 
+    cost_rent = getTotalRentalCost(aantal_investors, aantal_investors )
+    food_cost = getJourneyFoodCostsInGold(aantal_investors, aantal_investors)
+    gear_cost = getItemsValueInGold(gear) * aantal_investors
+ 
+    return cost_rent + food_cost + gear_cost
 
 ##################### O11 #####################
 
