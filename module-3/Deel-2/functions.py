@@ -1,6 +1,6 @@
 import time
 from termcolor import colored
-from data import JOURNEY_IN_DAYS, COST_FOOD_HORSE_COPPER_PER_DAY, COST_FOOD_HUMAN_COPPER_PER_DAY, COST_HORSE_SILVER_PER_DAY, COST_TENT_GOLD_PER_WEEK
+from data import JOURNEY_IN_DAYS, COST_FOOD_HORSE_COPPER_PER_DAY, COST_FOOD_HUMAN_COPPER_PER_DAY, COST_HORSE_SILVER_PER_DAY, COST_TENT_GOLD_PER_WEEK, COST_INN_HUMAN_SILVER_PER_NIGHT,COST_INN_HORSE_COPPER_PER_NIGHT
 from math import ceil
 
 ##################### O03 #####################
@@ -157,11 +157,21 @@ def getTotalInvestorsCosts(investors: list, gear: list) -> float:
 
 ##################### O11 #####################
 
-def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
-    pass
 
-def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
-    pass
+def getMaxAmountOfNightsInInn(leftoverGold: float, people: int, horses: int) -> int:
+    total_nights = 0
+    while True:
+        cost_in_gold = getJourneyInnCostsInGold(total_nights, people, horses)
+        if cost_in_gold > leftoverGold:
+            break
+        total_nights += 1
+    return total_nights - 1
+ 
+def getJourneyInnCostsInGold(nightsInInn: int, people: int, horses: int) -> float:
+    total_cost_silver = nightsInInn * COST_INN_HUMAN_SILVER_PER_NIGHT * people
+    total_cost_copper = nightsInInn * COST_INN_HORSE_COPPER_PER_NIGHT * horses
+    total_cost_gold = copper2gold(total_cost_copper) + silver2gold(total_cost_silver)
+    return round(float(total_cost_gold) , 2)
 
 ##################### O13 #####################
 
