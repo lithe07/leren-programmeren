@@ -26,15 +26,12 @@ def platinum2gold(amount:int) -> float:
 def getPersonCashInGold(personCash:dict) -> float:
     total_gold = 0
    
-    total_gold += copper2gold(personCash.get('copper', 0))
-   
+    total_gold += copper2gold(personCash.get('copper', 0))  
     total_gold += silver2gold(personCash.get('silver', 0))
-
     total_gold += personCash.get('gold', 0)
-
     total_gold += platinum2gold(personCash.get('platinum', 0))
-   
-    return total_gold                                                                                                                                                                                                          
+    return total_gold  
+                                                                                                                                                                    
 ##################### O05 #####################
 
 def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
@@ -183,8 +180,23 @@ def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> fl
 
 ##################### O14 #####################
 
-def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
-    pass
+def getEarnigs(profitGold: float, mainCharacter: dict, friends: list, investors: list) -> list:
+    people = [mainCharacter] + friends + investors
+    earnings = []
+
+    for person in people:
+        name = person.get('name', 'Unknown')
+        start_amount = getPersonCashInGold(person.get('cash', {}))
+        platinum_to_gold = platinum2gold(person.get('platinum', 0))
+        end_amount = start_amount + person.get('gold', 0) + platinum_to_gold
+
+        earnings.append({
+            'name': name,
+            'start': round(start_amount, 2),
+            'end': round(end_amount, 2)
+        })
+
+    return earnings
 
 ##################### view functions #####################
 
