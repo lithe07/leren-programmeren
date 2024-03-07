@@ -36,12 +36,11 @@ while aantal_ronden > 0:
     spelen = input("Wil je nog spelen antwoord met ja/nee? ")
     aantal_pogingen += 10
     if spelen == 'nee':
+        print(score)
         break
     if aantal_ronden == 0:
         print("Je hebt verloren.")
     elif score == 20:
         print("Je hebt gewonnen!")
 print("Einde programma")
-
-
 
