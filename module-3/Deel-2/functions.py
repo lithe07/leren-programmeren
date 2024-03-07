@@ -172,31 +172,50 @@ def getJourneyInnCostsInGold(nightsInInn: int, people: int, horses: int) -> floa
 
 ##################### O13 #####################
 
-def getInvestorsCuts(profitGold:float, investors:list) -> list:
-    pass
 
-def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
-    pass
+def getInvestorsCuts(profitGold: float, investors: list) -> list:
+    interesting_investors = getInterestingInvestors(investors)
+    investors_cuts = []
+ 
+    for investor in interesting_investors:
+        investors_cuts.append(round(investor['profitReturn'] / 100 * profitGold, 2 ))
+ 
+    return investors_cuts
+ 
+ 
+def getAdventurerCut(profitGold: float, investorsCuts: list, fellowship: int) -> float:
+    total_investors_cut = sum(investorsCuts)
+    if profitGold > 0 :
+        adventurer_cut = profitGold - total_investors_cut
+        return round(adventurer_cut / fellowship ,2)
+    else:
+        return 0.0
 
 ##################### O14 #####################
 
-def getEarnigs(profitGold: float, mainCharacter: dict, friends: list, investors: list) -> list:
+def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
     people = [mainCharacter] + friends + investors
     earnings = []
 
+    # haal de juiste inhoud op
+    adventuringFriends = []
+    interestingInvestors = []
+    adventuringInvestors = []
+    investorsCuts = []
+    goldCut = 0.0
+
+    # verdeel de uitkomsten
     for person in people:
-        name = person.get('name', 'Unknown')
-        start_amount = getPersonCashInGold(person.get('cash', {}))
-        platinum_to_gold = platinum2gold(person.get('platinum', 0))
-        end_amount = start_amount + person.get('gold', 0) + platinum_to_gold
+        #code aanvullen
 
         earnings.append({
-            'name': name,
-            'start': round(start_amount, 2),
-            'end': round(end_amount, 2)
+            'name'   : '??',
+            'start'  : 0.0,
+            'end'    : 0.0
         })
 
     return earnings
+
 
 ##################### view functions #####################
 
