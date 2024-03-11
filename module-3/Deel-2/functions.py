@@ -193,29 +193,39 @@ def getAdventurerCut(profitGold: float, investorsCuts: list, fellowship: int) ->
 
 ##################### O14 #####################
 
-def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
+def getEarnigs(profitGold: float, mainCharacter: dict, friends: list, investors: list) -> list:
     people = [mainCharacter] + friends + investors
     earnings = []
 
-    # haal de juiste inhoud op
-    adventuringFriends = []
-    interestingInvestors = []
-    adventuringInvestors = []
-    investorsCuts = []
-    goldCut = 0.0
+    # Haal de juiste inhoud op
+    adventuringFriends = getAdventuringFriends(friends)
+    interestingInvestors = getInterestingInvestors(investors)
+    adventuringInvestors = getAdventuringInvestors(investors)
+    investorsCuts = getInvestorsCuts(profitGold, interestingInvestors)
 
-    # verdeel de uitkomsten
+    # Bepaal het totaal aantal mensen dat deelnam aan het avontuur
+    totalParticipants = len(adventuringFriends) + len(adventuringInvestors) + 1  # mainCharacter
+
+    # Verdeel de uitkomsten
     for person in people:
-        #code aanvullen
+        name = person['name']
+        start = getCashInGoldFromPeople([person])
+        end = start
+
+        if person in adventuringFriends or person in adventuringInvestors or person == mainCharacter:
+            goldCut = getAdventurerCut(profitGold, investorsCuts, totalParticipants)
+            end += goldCut
+            if person != mainCharacter:
+                # Iedereen die deelnam geeft 10 goud aan de avonturier
+                end -= 10
+
 
         earnings.append({
-            'name'   : '??',
-            'start'  : 0.0,
-            'end'    : 0.0
+            'name': name,
+            'start': round(start, 2),
+            'end': round(end, 2)
         })
-
     return earnings
-
 
 ##################### view functions #####################
 
