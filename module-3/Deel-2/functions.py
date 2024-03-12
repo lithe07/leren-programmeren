@@ -212,20 +212,26 @@ def getEarnigs(profitGold: float, mainCharacter: dict, friends: list, investors:
         start = getCashInGoldFromPeople([person])
         end = start
 
-        if person in adventuringFriends or person in adventuringInvestors or person == mainCharacter:
-            goldCut = getAdventurerCut(profitGold, investorsCuts, totalParticipants)
-            end += goldCut
-            if person != mainCharacter:
-                # Iedereen die deelnam geeft 10 goud aan de avonturier
-                end -= 10
+        if person == mainCharacter:
+            for friend in friends:
+                end += 10
+        elif person in friends:
+            end -= 10
+        elif person in adventuringInvestors:
+            # Voeg 10 goud toe aan de avonturier voor elke investeerder
+            end += 10
 
+        goldCut = getAdventurerCut(profitGold, investorsCuts, totalParticipants)
+        end += goldCut
 
         earnings.append({
             'name': name,
             'start': round(start, 2),
             'end': round(end, 2)
         })
+
     return earnings
+
 
 ##################### view functions #####################
 

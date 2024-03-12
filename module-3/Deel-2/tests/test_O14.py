@@ -42,7 +42,7 @@ testarg_investors_test3_5_6 = [{
         'gold' : 0,
         'silver' : 0,
         'copper' : 0
-    }                                                           
+    }                                                         
 }]
 expected = [
     {'name': 'TestChar2', 'start': 30.0, 'end': 77.5}, 
@@ -50,6 +50,8 @@ expected = [
 ]
 result = getEarnigs(100, testarg_mainCharacter_test2_3_7_8, [], testarg_investors_test3_5_6)
 test('getEarnigs - test 3',expected, result)
+print(result, test)
+print(expected)
 
 
 testarg_friends_test4_5_8 = [{
@@ -209,7 +211,7 @@ expected = [
 ]
 result = getEarnigs(120, testarg_mainCharacter_test2_3_7_8, testarg_friends_test4_5_8, testarg_investors_test8)
 test('getEarnigs - test 8',expected, result)
-print(result, expected)
+
 
 if __name__ == "__main__":
     report()
