@@ -196,42 +196,46 @@ def getAdventurerCut(profitGold: float, investorsCuts: list, fellowship: int) ->
 def getEarnigs(profitGold: float, mainCharacter: dict, friends: list, investors: list) -> list:
     people = [mainCharacter] + friends + investors
     earnings = []
-
+ 
     # Haal de juiste inhoud op
     adventuringFriends = getAdventuringFriends(friends)
-    interestingInvestors = getInterestingInvestors(investors)
     adventuringInvestors = getAdventuringInvestors(investors)
-    investorsCuts = getInvestorsCuts(profitGold, interestingInvestors)
-
+    interestingInvestors = getInterestingInvestors(investors)
+    investorsCuts = getInvestorsCuts(profitGold, investors)
+ 
     # Bepaal het totaal aantal mensen dat deelnam aan het avontuur
     totalParticipants = len(adventuringFriends) + len(adventuringInvestors) + 1  # mainCharacter
-
+    profitgold_delen = getAdventurerCut(profitGold, investorsCuts, totalParticipants)
+ 
     # Verdeel de uitkomsten
     for person in people:
         name = person['name']
         start = getCashInGoldFromPeople([person])
         end = start
-
+ 
+ 
         if person == mainCharacter:
-            for friend in friends:
-                end += 10
-        elif person in friends:
+            end += 10 * len(adventuringFriends)
+            end += profitgold_delen
+           
+        elif person in adventuringFriends:
+            end += profitgold_delen
             end -= 10
-        elif person in adventuringInvestors:
-            # Voeg 10 goud toe aan de avonturier voor elke investeerder
-            end += 10
-
-        goldCut = getAdventurerCut(profitGold, investorsCuts, totalParticipants)
-        end += goldCut
-
+ 
+ 
+        elif person in interestingInvestors:
+            end += round(profitGold / 100 * person['profitReturn'] , 2)
+ 
+ 
+        if person in adventuringInvestors:
+            end += profitgold_delen
+ 
         earnings.append({
             'name': name,
             'start': round(start, 2),
             'end': round(end, 2)
         })
-
     return earnings
-
 
 ##################### view functions #####################
 
