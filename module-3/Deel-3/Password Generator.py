@@ -1,37 +1,19 @@
-# import string
-# import secrets
-
-# symbols = ['@', '%', '$', '#', '&', '_', '?'] 
-
-# password = ""
-# for _ in range(21):
-#     password += secrets.choice(string.ascii_lowercase)
-# password += secrets.choice(string.ascii_uppercase)
-# password += secrets.choice(string.digits)
-# password += secrets.choice(symbols)
-# print(password)
-# print(len(password))
+import random, string
 
 
+for i in range(20):
+    hf = random.randint(2, 6)
+    nummers = random.randint(4, 7)
+    special_characters = '@#$%&_?'
+    kl = 24 - hf - nummers - 3
 
-import random
-import string
 
-length = 24
-lower = string.ascii_lowercase
-upper = string.ascii_uppercase
-num = string.digits
-symbols = string.punctuation
-    
-all = lower + upper + num + symbols
-
-temp = random.sample(all,length)
-
-password = "".join(temp)
-
-print(password)
-print(len(password))
+    random_hf = ''.join(random.choice(string.ascii_uppercase) for _ in range(hf))
+    random_kl = ''.join(random.choice(string.ascii_lowercase) for _ in range(kl))
+    random_characters = ''.join(random.choice(special_characters) for _ in range(3))
+    random_nummers = ''.join(random.choice('0123456789') for _ in range(nummers))
 
 
 
-
+    ww = random_hf + random_kl + random_characters + random_nummers
+    print(ww)
