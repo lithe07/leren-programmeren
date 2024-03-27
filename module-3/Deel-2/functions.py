@@ -153,8 +153,6 @@ def getTotalInvestorsCosts(investors: list, gear: list) -> float:
     return cost_rent + food_cost + gear_cost
 
 ##################### O11 #####################
-
-
 def getMaxAmountOfNightsInInn(leftoverGold: float, people: int, horses: int) -> int:
     total_nights = 0
     while True:
