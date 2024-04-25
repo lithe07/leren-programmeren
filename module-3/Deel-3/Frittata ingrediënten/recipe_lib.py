@@ -23,11 +23,22 @@ def input_nr_persons(prompt: str) -> int:
 
 
 def round_piece(amount: float) -> int:
-  pass
+  return math.ceil(amount)
 
 # returns amount rounded to the closest decimals: .00 or .25 or .50 or 0.75 unless amount >= 10
 def round_quarter(amount: float) -> float:
-  pass
+    if amount > 10:
+        return round(amount)    
+    else:
+        remainder = amount % 0.25
+        if remainder < 0.125:
+            return amount - remainder
+        else:
+            return amount + (0.25 - remainder)
+# Voorbeeldgebruik:
+print(round_quarter(1.90))  # Output: 9.75
+print(round_quarter(11.89)) # Output: 12
+
 
 
 # returns single or plural description of a string 'single desciption|plural description' 

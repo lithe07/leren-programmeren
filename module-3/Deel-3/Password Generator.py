@@ -12,3 +12,6 @@ random_nummers = ''.join(random.choice('0123456789') for _ in range(nummers))
 
 ww = random_hf + random_kl + random_characters + random_nummers
 print(ww)
+
+
+
