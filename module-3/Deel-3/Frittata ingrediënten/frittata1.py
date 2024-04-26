@@ -13,34 +13,34 @@ nr_persons = input_nr_persons('Voor hoeveel personen is het recept? ')# replace 
 factor = nr_persons / RECIPE_PERSONS
  
 # calculate amount_eggs
-amount_eggs = AMOUNT_EGGS * factor
+amount_eggs = round_piece(AMOUNT_EGGS * factor)
  
 # calculate amount_milk
-amount_milk = AMOUNT_MILK * factor
- 
+amount_milk = round_quarter(AMOUNT_MILK * factor)
+print(AMOUNT_MILK * factor)
 # calculate amount_salt
-amount_salt = AMOUNT_SALT * factor
+amount_salt = round_quarter(AMOUNT_SALT * factor)
  
 # calculate amount_pepper
-amount_pepper = AMOUNT_PEPPER * factor
+amount_pepper = round_quarter(AMOUNT_PEPPER * factor)
  
 # calculate amount_oil
-amount_oil = AMOUNT_OIL * factor
+amount_oil = round_quarter(AMOUNT_OIL * factor)
  
 # calculate amount_onions
-amount_onions = AMOUNT_ONIONS * factor
+amount_onions = round_piece(AMOUNT_ONIONS * factor)
  
 # calculate amount_garlics
-amount_garlics = AMOUNT_GARLICS * factor
+amount_garlics = round_piece(AMOUNT_GARLICS * factor)
  
 # calculate amount_spinach
-amount_spinach = AMOUNT_SPINACH * factor
+amount_spinach = round_quarter(AMOUNT_SPINACH * factor)
  
 # calculate amount_paprikas
-amount_paprikas = AMOUNT_PAPRIKAS * factor
+amount_paprikas = round_piece(AMOUNT_PAPRIKAS * factor)
  
 # calculate amount_cheese
-amount_cheese = AMOUNT_CHEESE * factor
+amount_cheese = round_quarter(AMOUNT_CHEESE * factor)
  
  
  
@@ -70,11 +70,3 @@ print(f'* {amount_paprikas} {TXT_PAPRIKAS}')
 print(f"* {amount_cheese} {TXT_CUPS} {TXT_CHEESE}")
 # print (formatted) all amounts and units combined with their ingrediënt descriptions
 print('-----------------------------------------------')
-
- 
- 
- 
- 
- 
- 
- 
